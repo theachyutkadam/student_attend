@@ -8,11 +8,12 @@ class JDBCTest {
     String url = "jdbc:mysql://localhost:3306/student_attend";
     String db_user = "root";
     String db_password = "root";
+    Connection con;
+    Statement stmt;
     try {
       Class.forName("com.mysql.jdbc.Driver");
-      Connection con;
       con = DriverManager.getConnection(url, db_user, db_password);
-      Statement stmt = con.createStatement();  
+      stmt = con.createStatement();
       ResultSet rs = stmt.executeQuery("select * from users");
 
       while(rs.next()) {
@@ -26,7 +27,7 @@ class JDBCTest {
       }
       con.close();
     } catch (Exception e) {
-      e.printStackTrace(); 
+      e.printStackTrace();
     }
   }
 }
