@@ -24,9 +24,10 @@ class JDBCTest {
         else {
           System.out.println("Failed to login");
         }
-      }
-      con.close();
-    } catch (Exception e) {
+        con.close();
+      } 
+    }
+      catch (Exception e) {
       e.printStackTrace();
     }
   }
